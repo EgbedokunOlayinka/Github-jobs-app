@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route } from "react-router-dom";
+import "./App.css";
 
-function App() {
+import { Container } from "@chakra-ui/react";
+import Header from "./components/Header";
+import HomePage from "./views/HomePage";
+import JobPage from "./views/JobPage";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container fontFamily="body" maxW={["full", "md", "2xl", "4xl"]} mb="8rem">
+      <Header />
+      <Route path="/" component={HomePage} exact />
+      <Route path="/jobs/:id" component={JobPage} exact />
+    </Container>
   );
-}
+};
 
 export default App;
