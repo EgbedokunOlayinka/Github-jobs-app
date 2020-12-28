@@ -9,7 +9,7 @@ import JobPage from "./views/JobPage";
 
 const App = () => {
   return (
-    <Container fontFamily="body" maxW={["full", "md", "2xl", "4xl"]} mb="8rem">
+    <Container fontFamily="body" maxW={["full", "md", "2xl", "4xl"]} mb="4rem">
       <Header />
       <Route path="/" component={HomePage} exact />
       <Route path="/jobs/:id" component={JobPage} exact />
