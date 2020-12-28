@@ -10,7 +10,7 @@ const Search = () => {
   const submitDetails = (e) => {
     e.preventDefault();
     setSearchInput(searchDetails.toLowerCase());
-    getJobs(searchDetails.toLowerCase());
+    getJobs(searchDetails.toLowerCase(), true);
   };
 
   return (
@@ -31,7 +31,7 @@ const Search = () => {
           bg="white"
           className="search-box"
           type="text"
-          placeholder="Titles, companies, expertise, or benefits"
+          placeholder="Titles, companies, or expertise"
           value={searchDetails}
           onChange={(e) => setSearchDetails(e.target.value)}
         />

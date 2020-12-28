@@ -34,7 +34,7 @@ const Location = () => {
           borderRadius="4px"
           bg="white"
           type="text"
-          placeholder="City, state, zip code, or country"
+          placeholder="City, state, or country"
           size="sm"
           mt={2}
           className="location-input"

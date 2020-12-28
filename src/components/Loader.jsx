@@ -3,7 +3,7 @@ import { Spinner, Center } from "@chakra-ui/react";
 
 const Loader = () => {
   return (
-    <Center>
+    <Center mt={8}>
       <Spinner
         thickness="4px"
         speed="0.8s"

@@ -10,7 +10,7 @@ const initialState = {
   loading: false,
   error: null,
   currentAppPage: 1,
-  jobsPerPage: 5,
+  jobsPerPage: 7,
   fullTime: true,
   job: null,
 };
@@ -44,7 +44,7 @@ export const GlobalProvider = ({ children }) => {
     return jobs;
   }
 
-  async function getJobs(searchDetails = "") {
+  async function getJobs(searchDetails = "", search = false) {
     try {
       dispatch({
         type: "GET_JOBS_LOADING",
@@ -81,6 +81,13 @@ export const GlobalProvider = ({ children }) => {
         type: "SET_JOBS",
         payload: fullyFilteredJobs,
       });
+
+      if (search) {
+        dispatch({
+          type: "SET_CURRENT_APP_PAGE",
+          payload: 1,
+        });
+      }
     } catch (err) {
       dispatch({
         type: "GET_JOBS_ERROR",
@@ -139,6 +146,11 @@ export const GlobalProvider = ({ children }) => {
     dispatch({
       type: "SET_FULL_TIME",
     });
+
+    dispatch({
+      type: "SET_CURRENT_APP_PAGE",
+      payload: 1,
+    });
   }
 
   function setLocation(val) {
@@ -158,6 +170,11 @@ export const GlobalProvider = ({ children }) => {
     dispatch({
       type: "SET_LOCATION",
       payload: val,
+    });
+
+    dispatch({
+      type: "SET_CURRENT_APP_PAGE",
+      payload: 1,
     });
   }
 

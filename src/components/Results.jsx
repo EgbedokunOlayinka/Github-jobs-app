@@ -119,7 +119,7 @@ const Results = () => {
                             fontWeight="500"
                             ml={2}
                             noOfLines={1}
-                            maxW="50px"
+                            maxW="60px"
                           >
                             {job.location}
                           </Text>

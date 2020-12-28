@@ -9,14 +9,12 @@ import JobFirst from "../components/JobFirst";
 import JobSecond from "../components/JobSecond";
 
 const JobPage = ({ match }) => {
-  const { getJob, loading, error, job } = useContext(GlobalContext);
+  const { getJob, loading, error } = useContext(GlobalContext);
 
   useEffect(() => {
     getJob(match.params.id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [match.params.id]);
-
-  console.log(job);
 
   return loading ? (
     <Loader />
