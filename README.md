@@ -1,4 +1,4 @@
-[Live link](https://wave-jobs.netlify.app).
+[LIVE LINK](https://wave-jobs.netlify.app)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
